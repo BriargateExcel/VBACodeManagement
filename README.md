@@ -14,7 +14,7 @@ My `Personal.xlsb` workbook creates a new element in the Excel ribbon called Add
 
  
 
-![img](C:\Users\DickDye\Documents\Excel\Writeups 2020-06-26\VBA_Code_Management\Code_Management_Ribbon.png)
+![img](https://github.com/BriargateExcel/VBACodeManagement/blob/master/Code_Management_Ribbon.png)
 
  
 
@@ -34,11 +34,11 @@ My `Personal.xlsb` workbook creates a new element in the Excel ribbon called Add
 - Create the three tables. The easiest way to do this is to copy the tables from my example file in gitlab or github.
 - Press the create configuration tables button. A form will pop up asking you which VBA Project you’re interested in.
 
-![A screenshot of a cell phone  Description automatically generated](C:\Users\DickDye\Documents\Excel\Writeups 2020-06-26\VBA_Code_Management\ProjectSelection.png)
+![Project selection](https://github.com/BriargateExcel/VBACodeManagement/blob/master/ProjectSelection.png)
 
 - If you have several workbooks open, you can select the right one from the drop down and press select. It’s very important to change the name of each workbook’s VBAProject to a name that’s unique to that workbook. In the VB Editor -> Tools -> Properties and specify a name for your project. If you don’t make the VBA project name unique to each workbook, you will have a dropdown full of VBAProjects and you won’t be able to distinguish which one you want.
 
-![A screenshot of a cell phone  Description automatically generated](C:\Users\DickDye\Documents\Excel\Writeups 2020-06-26\VBA_Code_Management\CodeGroupSelection.png)
+![Code group selection](https://github.com/BriargateExcel/VBACodeManagement/blob/master/CodeGroupSelection.png)
 
 - After you select your project a second dropdown will appear so you can select the group of modules you’re interested in. When you’re creating configuration tables, select All.
 - The code manager will scan through the modules in your workbook and compare that list against the list of modules in the modules table. The code will ask if you want to add new modules or delete missing modules from the modules table.
