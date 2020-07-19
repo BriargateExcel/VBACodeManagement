@@ -4,21 +4,19 @@ Performing VBA code management can be challenging. Microsoft doesn’t provide a
 
 I’ve created code handling routines in my `Personal.xlsb` workbook that allow me to export and import entire collections of modules at once. Once your VBA code is in a folder, you can use git or any other change management program to manage your changes.
 
-My `Personal.xlsb` workbook creates a new element in the Excel ribbon called Add-ins. Within that ribbon element, `Personal.xlsb` creates 4 buttons:
+My `Personal.xlsb` workbook creates a new element in the Excel ribbon called Add-ins (https://github.com/BriargateExcel/AddingVBARibbonElements). Within that ribbon element, `Personal.xlsb` creates 4 buttons:
 
 - Create configuration tables
 - Export modules
 - Import modules
 - Make all worksheets visible. This isn’t one of the code management buttons but I find it useful to make all the worksheets in a workbook visible with one button click.
-- See https://github.com/BriargateExcel/AddingVBARibbonElements for more information on adding elements to the Excel ribbon
 
- 
 
 ![img](./Figures/Code_Management_Ribbon.png)
 
  
 
-**Create configuration tables** populates three tables in a worksheet called “VBA Make File.” The first table (modules table) lists all the modules in the workbook and groups them into three groups called All, Common, and Built. The second table (paths table) specifies the folder where each module group is stored. The third table (references table) is a list of all the references in this workbook. The import function ensures that all references area properly set.
+**Create configuration tables** populates three tables in a worksheet called “VBA Make File.” The first table (modules table) lists all the modules in the workbook and groups them into three groups called All, Common, and Built. The groups overlap; a module can belong to more than one group. The second table (paths table) specifies the folder where each module group is stored. The third table (references table) is a list of all the references in this workbook. The import function ensures that all necessary references area properly set.
 
 **Export Modules** reads the module and paths tables and writes the selected modules to the selected folder.
 
@@ -45,7 +43,7 @@ My `Personal.xlsb` workbook creates a new element in the Excel ribbon called Add
 - The code manager will then ask you for the folders where you want to store All your modules, your Common modules, and your Built modules. I’ve created several modules that I use in every project; those are the Common modules. I do a lot of automated code generation; that’s where the Built modules go. See the TableBuilder for more details.
 - The code manager will scan through the references in your workbook and compare that list against the list of references in the references table. The code will ask if you want to add new references or delete missing references from the references table.
 - The code manager will update the three tables and will tell you it was successful.
-- You will need to populate the Paths column of the modules table by hand
+- You will need to populate the Paths column of the modules table by hand. I always start by putting All in every row of the modules table then add Common or Built to the appropriate rows.
 
 **How to use export modules:**
 
@@ -61,7 +59,7 @@ My `Personal.xlsb` workbook creates a new element in the Excel ribbon called Add
 - After you select the project, a second dropdown will appear so you can select the group of modules you want to import.
 - The code manager will import the selected modules from the specified folder
 - The code manager will tell you it was successful
-- Limitation: you cannot import into the Personal.xlsb workbook. Rationale: you cannot import code that replaces the code you are executing.
+- Limitation: you cannot import into the Personal.xlsb workbook because you cannot import code that replaces the code you are executing.
 
 **Options:**
 
